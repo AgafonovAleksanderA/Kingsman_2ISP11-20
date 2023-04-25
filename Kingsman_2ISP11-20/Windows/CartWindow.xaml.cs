@@ -57,7 +57,36 @@ namespace Kingsman_2ISP11_20.Windows
 
         private void BtnPyu_Click(object sender, RoutedEventArgs e)
         {
+            //оформление заказа
+        }
 
+        private void BtnMinus_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var service = button.DataContext as DataBase.Service;
+
+            service.Count--;
+        }
+
+        private void BtAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var service = button.DataContext as DataBase.Service;
+
+            service.Count++;
+        }
+
+        private void TbColl_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
         }
     }
 }

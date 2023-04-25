@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kingsman_2ISP11_20.ClassHelper
+namespace Kingsman_2ISP11_20.DataBase
 {
-    internal class Count
+    
+
+    public partial class Service
     {
+        public int Count { get; set; }
     }
 }
