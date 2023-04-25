@@ -24,7 +24,7 @@ namespace Kingsman_2ISP11_20.Windows
         {
             InitializeComponent();
             GetListService();
-            
+
         }
         private void GetListService()
         {
@@ -33,7 +33,7 @@ namespace Kingsman_2ISP11_20.Windows
 
         private void BtnAddService_Click(object sender, RoutedEventArgs e)
         {
-           AddWindow addWindow = new AddWindow();
+            AddWindow addWindow = new AddWindow();
             addWindow.ShowDialog();
 
             GetListService();
@@ -62,6 +62,7 @@ namespace Kingsman_2ISP11_20.Windows
             }
             var service = button.DataContext as DataBase.Service;
 
+            service.Count++;
             CartServiceClass.ServiceCart.Add(service);
 
             MessageBox.Show($"Услуга {service.Title} добавлена в корзину!");

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kingsman_2ISP11_20.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -30,8 +31,10 @@ namespace Kingsman_2ISP11_20.Windows
         {
            ObservableCollection<DataBase.Service> lastCart = new ObservableCollection<DataBase.Service>(ClassHelper.CartServiceClass.ServiceCart);
             LvCartService.ItemsSource = lastCart;
+            
         }
-
+        
+        
         private void BtnRomoveToCart_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
@@ -50,6 +53,11 @@ namespace Kingsman_2ISP11_20.Windows
             ServiceWindow serviceWindow = new ServiceWindow();
             serviceWindow.Show();
             this.Close();
+        }
+
+        private void BtnPyu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

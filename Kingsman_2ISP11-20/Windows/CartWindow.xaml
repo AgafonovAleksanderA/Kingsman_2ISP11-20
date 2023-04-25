@@ -66,6 +66,7 @@
                                        TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
 
                             <WrapPanel HorizontalAlignment="Right">
+                                
 
                                 <Button x:Name="BtnRomoveToCart"
                                     Width="40"
@@ -77,6 +78,7 @@
                                     Click="BtnRomoveToCart_Click">
                                     <Image Source="/Res/Remove.png" />
                                 </Button>
+                                
                             </WrapPanel>
 
                         </StackPanel>
@@ -97,6 +99,17 @@
                 HorizontalAlignment="Right"
                 Click="BtnBack_Click">
 
+        </Button>
+        <Button x:Name="BtnPyu"
+                Content="Оформить покупку"
+                Grid.Row="3"
+                Width="120"
+                Height="40"
+                Background="{x:Null}"   
+                BorderThickness="0"
+                HorizontalAlignment="Right"
+                Click="BtnPyu_Click"
+                Margin="0 0 100 0">
         </Button>
     </Grid>
 </Window>
