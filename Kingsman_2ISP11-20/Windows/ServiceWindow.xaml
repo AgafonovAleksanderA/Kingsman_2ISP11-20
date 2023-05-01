@@ -43,7 +43,7 @@
                         <StackPanel>
                             <Image Height="180"
                                    Width="200" 
-                                   Margin="8">
+                                   Margin="8" >
                                 <Image.Source>
                                     <Binding Path ="Image">
                                         <Binding.TargetNullValue>
@@ -72,7 +72,7 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnEdit_Click">
-                                    <Image Source="/Res/edit.png"/>
+                                    <Image Source="/Res/Image/edit.png"/>
                                 </Button>
                                 <Button x:Name="BtnCart"
                                     Width="40"
@@ -82,7 +82,7 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnCart_Click">
-                                    <Image Source="/Res/Cart.png"/>
+                                    <Image Source="/Res/Image/Cart.png"/>
                                 </Button>
                             </WrapPanel>
                         </StackPanel>
@@ -100,7 +100,7 @@
                 HorizontalAlignment="Right"
                 Margin="0 0 70 0"
                 Click="BtnAddService_Click">
-            <Image Source="/Res/Add.png"/>
+            <Image Source="/Res/Image/Add.png"/>
         </Button>
         <Button x:Name="BtExit"
                 Grid.Row="3"
@@ -112,7 +112,7 @@
                 Height="44"
                 Width="40"
                 Click="BtExit_Click">
-            <Image Source="/Res/Exit.png"/>
+            <Image Source="/Res/Image/Exit.png"/>
         </Button>
         <Button x:Name="BtnGoToCart"
                     Width="40"
@@ -123,7 +123,7 @@
                     BorderThickness="0"
                     Click="BtnGoToCart_Click"
                 Grid.Row="1">
-            <Image Source="/Res/Cart.png"/>
+            <Image Source="/Res/Image/Cart.png"/>
         </Button>
     </Grid>
 </Window>

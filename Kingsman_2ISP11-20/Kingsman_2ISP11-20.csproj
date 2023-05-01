@@ -144,6 +144,9 @@
     <Compile Include="Windows\EditServiceWindow.xaml.cs">
       <DependentUpon>EditServiceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RegWindow.xaml.cs">
       <DependentUpon>RegWindow.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Res\Style\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EditServiceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,18 +234,19 @@
       <DependentUpon>DataBase.edmx</DependentUpon>
       <LastGenOutput>DataBase.cs</LastGenOutput>
     </Content>
-    <Resource Include="Res\minus.png" />
-    <Resource Include="Res\CartAdd.png" />
     <Resource Include="Res\defImg.jpeg" />
-    <Resource Include="Res\Add.png" />
-    <Resource Include="Res\Cart.png" />
-    <Resource Include="Res\edit.png" />
-    <Resource Include="Res\Exit.png" />
-    <Resource Include="Res\Icon 1.png" />
-    <Resource Include="Res\Logo.png" />
-    <Resource Include="Res\Logo2.png" />
-    <Resource Include="Res\Remove.png" />
-    <Resource Include="Res\ServTest.jpg" />
+    <Resource Include="Res\Image\minus.png" />
+    <Resource Include="Res\Image\CartAdd.png" />
+    <Resource Include="Res\Image\defImg.jpeg" />
+    <Resource Include="Res\Image\Add.png" />
+    <Resource Include="Res\Image\Cart.png" />
+    <Resource Include="Res\Image\edit.png" />
+    <Resource Include="Res\Image\Exit.png" />
+    <Resource Include="Res\Image\Icon 1.png" />
+    <Resource Include="Res\Image\Logo.png" />
+    <Resource Include="Res\Image\Logo2.png" />
+    <Resource Include="Res\Image\Remove.png" />
+    <Resource Include="Res\Image\ServTest.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -21,16 +21,21 @@ namespace Kingsman_2ISP11_20.Windows
     public partial class EditServiceWindow : Window
     {
         DataBase.Service editService = null;
-        public bool isEdit = false;
+
+        private bool isEdit = false;
+
         public EditServiceWindow()
         {
             InitializeComponent();
             isEdit = false;
         }
+
         public EditServiceWindow(DataBase.Service service)
         {
             InitializeComponent();
+
             isEdit = true;
+
             editService = service;
 
             CmbTypeService.ItemsSource = ClassHelper.EF.Context.TypeService.ToList();

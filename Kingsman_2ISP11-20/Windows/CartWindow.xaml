@@ -72,7 +72,7 @@
                                         Background="{Binding null}"
                                         BorderBrush="{Binding null}"
                                         Margin="10 5 0 0">
-                                    <Image Source="/Res/minus.png"/>
+                                    <Image Source="/Res/Image/minus.png"/>
                                 </Button>
                                 <TextBox HorizontalAlignment="Right"
                                            Width="50"
@@ -86,7 +86,7 @@
                                         Background="{Binding Null}"
                                         BorderBrush="{Binding Null}"
                                         Margin="10 5 0 0">
-                                    <Image Source="/Res/CartAdd.png"/>
+                                    <Image Source="/Res/Image/CartAdd.png"/>
                                 </Button>
                                 <Button x:Name="BtnRomoveToCart"
                                     Width="40"
@@ -96,7 +96,7 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnRomoveToCart_Click">
-                                    <Image Source="/Res/Remove.png" />
+                                    <Image Source="/Res/Image/Remove.png" />
                                 </Button>
 
                             </WrapPanel>

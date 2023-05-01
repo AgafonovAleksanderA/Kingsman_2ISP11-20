@@ -30,8 +30,8 @@ namespace Kingsman_2ISP11_20.Windows
             if (userAuth != null)
             {
                 ClassHelper.UserDataClass.Employee = userAuth;
-                ServiceWindow serviceWindow = new ServiceWindow();
-                serviceWindow.Show();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
                 this.Close();
             }
             else
@@ -44,6 +44,12 @@ namespace Kingsman_2ISP11_20.Windows
             RegWindow regWindow = new RegWindow();
             regWindow.Show();
             this.Close();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }

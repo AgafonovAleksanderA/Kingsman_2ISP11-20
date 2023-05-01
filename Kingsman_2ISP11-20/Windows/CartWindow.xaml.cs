@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Kingsman_2ISP11_20.ClassHelper;
 
 namespace Kingsman_2ISP11_20.Windows
 {
@@ -58,6 +59,31 @@ namespace Kingsman_2ISP11_20.Windows
         private void BtnPyu_Click(object sender, RoutedEventArgs e)
         {
             //оформление заказа
+            DataBase.Order order = new DataBase.Order();
+            order.IdClient = 2;
+            order.IdEmployee = 1;
+            
+            EF.Context.Order.Add(order);
+            
+            EF.Context.SaveChanges();
+            foreach (var item in ClassHelper.CartServiceClass.ServiceCart)
+            {
+                DataBase.OrderService orderService = new DataBase.OrderService();
+                orderService.IdOrder = 3;
+                orderService.IdService = item.Id;
+                orderService.Quantity = item.Count;
+
+                EF.Context.OrderService.Add(orderService);
+                EF.Context.SaveChanges();
+
+            }
+            EF.Context.SaveChanges();
+
+            MessageBox.Show("Заказ оформлен");
+            ClassHelper.CartServiceClass.ServiceCart.Clear();
+            ServiceWindow serviceWindow2 = new ServiceWindow();
+            serviceWindow2.Show();
+            this.Close();
         }
 
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
@@ -84,9 +110,6 @@ namespace Kingsman_2ISP11_20.Windows
             service.Count++;
         }
 
-        private void TbColl_TextChanged(object sender, TextChangedEventArgs e)
-        {
-           
-        }
+        
     }
 }
