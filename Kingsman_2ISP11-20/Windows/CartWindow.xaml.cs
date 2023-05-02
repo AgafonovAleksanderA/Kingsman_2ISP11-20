@@ -31,7 +31,7 @@ namespace Kingsman_2ISP11_20.Windows
         private void GetListService()
         {
            ObservableCollection<DataBase.Service> lastCart = new ObservableCollection<DataBase.Service>(ClassHelper.CartServiceClass.ServiceCart);
-            LvCartService.ItemsSource = lastCart;
+            LvCartService.ItemsSource = lastCart.Distinct();
             
         }
         

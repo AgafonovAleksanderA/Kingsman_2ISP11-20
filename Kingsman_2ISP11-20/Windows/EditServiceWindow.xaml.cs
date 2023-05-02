@@ -22,19 +22,15 @@ namespace Kingsman_2ISP11_20.Windows
     {
         DataBase.Service editService = null;
 
-        private bool isEdit = false;
 
         public EditServiceWindow()
         {
             InitializeComponent();
-            isEdit = false;
         }
 
         public EditServiceWindow(DataBase.Service service)
         {
             InitializeComponent();
-
-            isEdit = true;
 
             editService = service;
 
