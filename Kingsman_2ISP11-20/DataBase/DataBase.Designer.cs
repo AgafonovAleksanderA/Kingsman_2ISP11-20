@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\PC\source\repos\Kingsman_2ISP11-20\Kingsman_2ISP11-20\DataBase\DataBase.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\IMac6\source\repos\Kingsman_2ISP11-20\Kingsman_2ISP11-20\DataBase\DataBase.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

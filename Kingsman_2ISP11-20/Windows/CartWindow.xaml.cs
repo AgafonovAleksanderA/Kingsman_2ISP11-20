@@ -110,6 +110,9 @@ namespace Kingsman_2ISP11_20.Windows
             service.Count++;
         }
 
-        
+        private void Cost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
