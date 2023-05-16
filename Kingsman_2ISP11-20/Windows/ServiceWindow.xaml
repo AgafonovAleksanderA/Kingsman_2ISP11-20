@@ -24,7 +24,7 @@
                    FontWeight="Bold"/>
         <ListView x:Name="LvService" 
                   Grid.Row="2" 
-                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  d:ItemsSource="{d:SampleData ItemCount=6}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -36,14 +36,18 @@
                 <DataTemplate>
                     <Border BorderBrush="Gray"
                             BorderThickness="2"
-                            Width="200"
-                            Height="350"
-                            Margin="16"
+                            Width="400"
+                            Height="250"
+                            Margin="65 0 -20 20"
                             CornerRadius="8">
-                        <StackPanel>
+                        <WrapPanel>
+
                             <Image Height="180"
-                                   Width="200" 
+                                   Width="180" 
                                    Margin="8" >
+                                <Image.Clip>
+                                    <EllipseGeometry Center="85, 80" RadiusX="80" RadiusY="80"/>
+                                </Image.Clip>
                                 <Image.Source>
                                     <Binding Path ="Image">
                                         <Binding.TargetNullValue>
@@ -52,40 +56,43 @@
                                     </Binding>
                                 </Image.Source>
                             </Image>
-
-                            <TextBlock Text="{Binding Title}"
+                            <StackPanel Height="250" 
+                                        Width="190">
+                                <TextBlock Text="{Binding Title}"
                                        FontSize="18"
-                                       Margin="5 3"/>
-                            <TextBlock Text="{Binding Cost}"
+                                       Margin="16"/>
+                                <TextBlock Text="{Binding Cost}"
                                        FontSize="18"
-                                       Margin="5 3"/>
-                            <TextBlock Text="{Binding Discription}"
+                                       Margin="16"/>
+                                <TextBlock Text="{Binding Discription}"
                                        FontSize="18"
-                                       Margin="5 3"
+                                       Margin="16"
                                        TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
-                            <WrapPanel>
-                                <Button x:Name="BtnEdit"
+                                <WrapPanel Margin="0 40 0 0">
+                                    <Button x:Name="BtnEdit"
                                     Width="40"
                                     Height="40"
                                     HorizontalAlignment="Right"
-                                    Margin="10 5 0 0"
+                                    Margin=" 0 0 0 2"
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnEdit_Click">
-                                    <Image Source="/Res/Image/edit.png"/>
-                                </Button>
-                                <Button x:Name="BtnCart"
+                                        <Image Source="/Res/Image/edit.png"/>
+                                    </Button>
+                                    <Button x:Name="BtnCart"
                                     Width="40"
                                     Height="40"
                                     HorizontalAlignment="Right"
-                                    Margin="90 5 0 0"
+                                    Margin="100 0 0 0"
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnCart_Click">
-                                    <Image Source="/Res/Image/Cart.png"/>
-                                </Button>
-                            </WrapPanel>
-                        </StackPanel>
+                                        <Image Source="/Res/Image/Cart.png"/>
+                                    </Button>
+                                </WrapPanel>
+                            </StackPanel>
+
+                        </WrapPanel>
 
                     </Border>
                 </DataTemplate>
