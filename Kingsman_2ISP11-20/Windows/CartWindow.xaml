@@ -25,7 +25,7 @@
         <ListView x:Name="LvCartService" 
                   Grid.Row="2" 
                   d:ItemsSource="{d:SampleData ItemCount=5}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="LvCartService_SelectionChanged">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -131,12 +131,5 @@
                 Click="BtnPyu_Click"
                 Margin="0 0 100 0">
         </Button>
-        <TextBox x:Name="Cost"
-                 Grid.Row="3"
-                 Width="55"
-                 Height="30" TextChanged="Cost_TextChanged">
-            
-        </TextBox>
-        
     </Grid>
 </Window>
