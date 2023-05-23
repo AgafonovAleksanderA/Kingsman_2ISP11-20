@@ -33,9 +33,7 @@ namespace Kingsman_2ISP11_20.Windows
 
         private void BtnEmployees_Click(object sender, RoutedEventArgs e)
         {
-            EmploeeListWindow emploeeListWindow = new EmploeeListWindow();
-            emploeeListWindow.Show();
-            this.Close();
+
         }
 
         private void BtnClient_Click(object sender, RoutedEventArgs e)

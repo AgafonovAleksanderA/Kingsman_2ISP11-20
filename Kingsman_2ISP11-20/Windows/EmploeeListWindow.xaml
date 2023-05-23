@@ -47,23 +47,10 @@
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontWeight="Bold"/>
-                    <Button x:Name="BtnAddEmpl"
-                            Content="Добавить сотрудника"
-                            Width="150"
-                            FontSize="12"
-                            HorizontalAlignment="Right"
-                            Margin="0 5 20 5">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="9"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
                     <ListView x:Name="LvService" 
-                                Grid.Row="2" 
-                                d:ItemsSource="{d:SampleData ItemCount=5}"
-                                ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                                SelectionChanged="LvService_SelectionChanged">
+                  Grid.Row="2" 
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel/>
@@ -73,47 +60,57 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderBrush="Gray"
-                                        BorderThickness="2"
-                                        Width="695"
-                                        Height="50"
-                                        Margin="16"
-                                        CornerRadius="8">
-                                    <WrapPanel>
+                            BorderThickness="2"
+                            Width="200"
+                            Height="350"
+                            Margin="16"
+                            CornerRadius="8">
+                                    <StackPanel>
+                                        <Image Height="180"
+                                   Width="200" 
+                                   Margin="8" >
+                                            <Image.Source>
+                                                <Binding Path ="Image">
+                                                    <Binding.TargetNullValue>
+                                                        <ImageSource>/Res/defImg.jpeg</ImageSource>
+                                                    </Binding.TargetNullValue>
+                                                </Binding>
+                                            </Image.Source>
+                                        </Image>
+
                                         <TextBlock Text="{Binding FName}"
-                                                   FontSize="18"
-                                                   Margin="5"/>
+                                       FontSize="18"
+                                       Margin="5 3"/>
                                         <TextBlock Text="{Binding LName}"
                                                    FontSize="18"
-                                                   Margin="5"/>
+                                                   Margin="5 3"/>
                                         <TextBlock Text="{Binding Position}"
-                                                   FontSize="18"
-                                                   Margin="5"/>
+                                       FontSize="18"
+                                       Margin="5 3"/>
                                         <TextBlock Text="{Binding Phone}"
-                                                     FontSize="18"
-                                                    Margin="5"
-                                                   TextWrapping="Wrap"/>
-                                        <TextBlock Text="{Binding Gender.Name}"
-                                                   FontSize="18"
-                                                   Margin="5"/>
-                                        <Button x:Name="BtnEdit"
-                                                   Width="40"
-                                                   Height="40"
-                                                   HorizontalAlignment="Right"
-                                                   Margin="320 0 0 0"
-                                                   Background="{x:Null}"
-                                                   BorderThickness="0">
-                                            <Image Source="/Res/Image/edit.png"/>
-                                        </Button>
+                                       FontSize="18"
+                                       Margin="5 3"
+                                       TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
+                                        <WrapPanel HorizontalAlignment="Right">
+                                            <Button x:Name="BtnEdit"
+                                    Width="40"
+                                    Height="40"
+                                    HorizontalAlignment="Right"
+                                    Margin="5 0 5 0 "
+                                    Background="{x:Null}"
+                                    BorderThickness="0"
+                                   >
+                                                <Image Source="/Res/Image/edit.png"/>
+                                            </Button>
 
-
-                                    </WrapPanel>
-
+                                        </WrapPanel>
+                                    </StackPanel>
 
                                 </Border>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <!--<Button x:Name="BtnBack"
+                    <Button x:Name="BtnBack"
                             VerticalAlignment="Bottom"
                             HorizontalAlignment="Left"
                             Width="50"
@@ -128,7 +125,7 @@
                                 <Setter Property="CornerRadius" Value="9"/>
                             </Style>
                         </Button.Resources>
-                    </Button>-->
+                    </Button>
                 </Grid>
             </Border>
         </Border>
