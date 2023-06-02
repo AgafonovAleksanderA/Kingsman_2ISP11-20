@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Kingsman_2ISP11_20"
              StartupUri="Windows/AuthWindow.xaml">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Res/Style/Colors.xaml"/>
+                <ResourceDictionary Source="/Res/Style/Button.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

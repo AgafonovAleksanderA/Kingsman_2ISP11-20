@@ -15,18 +15,18 @@ using System.Windows.Shapes;
 namespace Kingsman_2ISP11_20.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для EmploeeListWindow.xaml
+    /// Логика взаимодействия для ClientListWindow.xaml
     /// </summary>
-    public partial class EmploeeListWindow : Window
+    public partial class ClientListWindow : Window
     {
-        public EmploeeListWindow()
+        public ClientListWindow()
         {
             InitializeComponent();
-            GetListEmploye();
+            GetListClient();
         }
-        private void GetListEmploye()
+        public void GetListClient()
         {
-            LvEmploye.ItemsSource = ClassHelper.EF.Context.Employee.ToList();
+            LvClient.ItemsSource = ClassHelper.EF.Context.Client.ToList();
         }
     }
 }

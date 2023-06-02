@@ -51,5 +51,15 @@ namespace Kingsman_2ISP11_20.Windows
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }

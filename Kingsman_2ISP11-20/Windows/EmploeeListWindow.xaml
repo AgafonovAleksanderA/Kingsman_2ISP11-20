@@ -6,128 +6,118 @@
         xmlns:local="clr-namespace:Kingsman_2ISP11_20.Windows"
         mc:Ignorable="d"
         Title="EmploeeListWindow" Height="470" Width="800">
-    <Grid>
+    <Grid HorizontalAlignment="Left">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="192*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0"
-                Grid.RowSpan="2">
-            <!--<Border.Background>
-                <ImageBrush ImageSource="/Res/Background.png"
-                            Stretch="UniformToFill"/>
-            </Border.Background>-->
-            <Border >
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" 
-                                         StartPoint="0.5,0" 
-                                         Opacity="0.7">
-                        <GradientStop Color="Black" 
-                                      Offset="1"/>
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="#FF060606"/>
-                        <GradientStop Color="White" 
-                                      Offset="0.787"/>
-                        <GradientStop Color="White" 
-                                      Offset="0.357"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <Grid Margin="20 0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25*"/>
-                        <RowDefinition Height="192*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.Background>
-                        <SolidColorBrush Color="White"
-                                         Opacity="0.7"/>
-                    </Grid.Background>
-                    <TextBlock Text="Список работников"
-                               FontSize="25"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontWeight="Bold"/>
-                    <ListView x:Name="LvService" 
-                  Grid.Row="2" 
-                  d:ItemsSource="{d:SampleData ItemCount=5}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel/>
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <Border BorderBrush="Gray"
-                            BorderThickness="2"
-                            Width="200"
-                            Height="350"
-                            Margin="16"
-                            CornerRadius="8">
-                                    <StackPanel>
-                                        <Image Height="180"
-                                   Width="200" 
-                                   Margin="8" >
-                                            <Image.Source>
-                                                <Binding Path ="Image">
-                                                    <Binding.TargetNullValue>
-                                                        <ImageSource>/Res/defImg.jpeg</ImageSource>
-                                                    </Binding.TargetNullValue>
-                                                </Binding>
-                                            </Image.Source>
-                                        </Image>
-
-                                        <TextBlock Text="{Binding FName}"
-                                       FontSize="18"
-                                       Margin="5 3"/>
-                                        <TextBlock Text="{Binding LName}"
-                                                   FontSize="18"
-                                                   Margin="5 3"/>
-                                        <TextBlock Text="{Binding Position}"
-                                       FontSize="18"
-                                       Margin="5 3"/>
-                                        <TextBlock Text="{Binding Phone}"
-                                       FontSize="18"
-                                       Margin="5 3"
-                                       TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
-                                        <WrapPanel HorizontalAlignment="Right">
-                                            <Button x:Name="BtnEdit"
-                                    Width="40"
-                                    Height="40"
-                                    HorizontalAlignment="Right"
-                                    Margin="5 0 5 0 "
-                                    Background="{x:Null}"
-                                    BorderThickness="0"
-                                   >
-                                                <Image Source="/Res/Image/edit.png"/>
-                                            </Button>
-
-                                        </WrapPanel>
-                                    </StackPanel>
-
-                                </Border>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                    <Button x:Name="BtnBack"
-                            VerticalAlignment="Bottom"
-                            HorizontalAlignment="Left"
-                            Width="50"
-                            Height="25"
-                            Content="Назад"
-                            Margin="20"
-                            
-                            Grid.Row="1"
-                            Background="White">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="9"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
-                </Grid>
-            </Border>
-        </Border>
+        <TextBlock Text="Сотрудники"
+                   
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Grid.Row="0"/>
+        <Grid Grid.Row="1" 
+              Margin="5 0 0 0"
+              Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="ID"
+                       FontSize="14"
+                       Grid.Column="0"
+                       
+                       />
+            <TextBlock Text="Имя"
+                       FontSize="14"
+                       Grid.Column="1"/>
+            <TextBlock Text="Фамилия"
+                       FontSize="14"
+                       Grid.Column="2"/>
+            <TextBlock Text="Должность"
+                       FontSize="14"
+                       Grid.Column="3"/>
+            <TextBlock Text="Номер телефона"
+                       FontSize="14"
+                       Grid.Column="4"/>
+            <TextBlock Text="Пол"
+                       FontSize="14"
+                       Grid.Column="5"/>
+        </Grid>
+        <ItemsControl x:Name="LvEmploye" 
+                      Margin="10 5 5 5"
+                      Grid.Row="2"
+                      d:ItemsSource="{d:SampleData ItemCount=5}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      Background="Transparent">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Id}"
+                                   FontSize="14"
+                                   HorizontalAlignment="Left"
+                                   Grid.Column="0"/>
+                        <TextBlock Text="{Binding FName}"
+                                   FontSize="14"
+                                   
+                                   Grid.Column="1"/>
+                        <TextBlock Text="{Binding LName}"
+                                   FontSize="14"
+                                   HorizontalAlignment="Left"
+                                   Grid.Column="2"/>
+                        <TextBlock Text="{Binding Position.Title}"
+                                   FontSize="14"
+                                   HorizontalAlignment="Left"
+                                   Grid.Column="3"/>
+                        <TextBlock Text="{Binding Phone}"
+                                   FontSize="14"
+                                   HorizontalAlignment="Left"
+                                   Grid.Column="4"/>
+                        <TextBlock Text="{Binding Gender.Name}"
+                                   FontSize="14"
+                                   HorizontalAlignment="Left"
+                                   Grid.Column="5"/>
+                        <Button x:Name="BtnRemoveEmployee"
+                                Width="20"
+                                Height="20"
+                                Background="{x:Null}"
+                               
+                                BorderThickness="0"
+                                
+                                Grid.Column="7">
+                        </Button>
+                        <Button x:Name="BtnEditEmployee"
+                                Width="20"
+                                Height="20"
+                                Background="{x:Null}"
+                                BorderThickness="0"
+                                Grid.Column="8">
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Right">
+            
+        </StackPanel>
     </Grid>
 </Window>

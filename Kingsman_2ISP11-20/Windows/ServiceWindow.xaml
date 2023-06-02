@@ -8,63 +8,121 @@
         Title="ServiceWindow" 
         Height="800" 
         Width="1024"
-        WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-
-        <TextBlock Text="Список услуг"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border CornerRadius="20"
+            BorderThickness="3">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{StaticResource backColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource backColor2}" Offset="0.6"/>
+                <GradientStop Color="{StaticResource backColor1}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{StaticResource winBorder1}" Offset="0"/>
+                <GradientStop Color="{StaticResource winBorder2}" Offset="0.6"/>
+                <GradientStop Color="{StaticResource winBorder3}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BtnMinimize"
+                        BorderThickness="0"
+                            Background="Transparent"
+                            FontSize="20"
+                            FontFamily="Roboto"
+                            Cursor="Hand"
+                            Content="─"
+                            Grid.Column="1"
+                            Style="{StaticResource secndBtn}"
+                            Click="BtnMinimize_Click"/>
+                <Button x:Name="BtnClose"
+                            Style="{StaticResource secndBtn}"
+                            Content="✕"
+                            BorderThickness="0"
+                            FontSize="20"
+                            Background="Transparent"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="BtnClose_Click"/>
+            </Grid>
+            <TextBlock Text="Список услуг"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30"
-                   FontWeight="Bold"/>
-        <ListView x:Name="LvService" 
+                   FontWeight="Bold"
+                       Foreground="{StaticResource Text1}"
+                       FontFamily="Italic"/>
+            <ListView x:Name="LvService" 
                   Grid.Row="2" 
-                  d:ItemsSource="{d:SampleData ItemCount=5}"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
+                  d:ItemsSource="{d:SampleData ItemCount=6}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      Background="{x:Null}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="Gray"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="{StaticResource Text1}"
                             BorderThickness="2"
-                            Width="200"
-                            Height="350"
+                            Width="450"
+                            Height="250"
                             Margin="16"
                             CornerRadius="8">
-                        <StackPanel>
-                            <Image Height="180"
-                                   Width="200" 
-                                   Margin="8" >
-                                <Image.Source>
-                                    <Binding Path ="Image">
-                                        <Binding.TargetNullValue>
-                                            <ImageSource>/Res/defImg.jpeg</ImageSource>
-                                        </Binding.TargetNullValue>
-                                    </Binding>
-                                </Image.Source>
-                            </Image>
-
-                            <TextBlock Text="{Binding Title}"
-                                       FontSize="18"
-                                       Margin="5 3"/>
-                            <TextBlock Text="{Binding Cost}"
-                                       FontSize="18"
-                                       Margin="5 3"/>
-                            <TextBlock Text="{Binding Discription}"
-                                       FontSize="18"
-                                       Margin="5 3"
-                                       TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
                             <WrapPanel>
-                                <Button x:Name="BtnEdit"
+                                <Image Height="200"
+                                   Width="200" 
+                                   Margin="20">
+                                    <Image.Source>
+                                        <Binding Path ="Image">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>/Res/defImg.jpeg</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Title}"
+                                       FontSize="18"
+                                       Margin="10"
+                                           Foreground="{StaticResource Text1}"/>
+                                        <TextBlock Text="{Binding Cost}"
+                                       FontSize="18"
+                                       Margin="10"
+                                           Foreground="{StaticResource Text1}"/>
+                                        <TextBlock Text="{Binding Discription}"
+                                       FontSize="18"
+                                       Margin="10"
+                                       TextWrapping="Wrap"
+                                           FontFamily="Arial Rounded MT Bold"
+                                           Foreground="{StaticResource Text1}"/>
+
+                                    </StackPanel>
+                                    <WrapPanel VerticalAlignment="Bottom"
+                                               Margin="2">
+                                        <Button x:Name="BtnEdit"
                                     Width="40"
                                     Height="40"
                                     HorizontalAlignment="Right"
@@ -72,9 +130,9 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnEdit_Click">
-                                    <Image Source="/Res/Image/edit.png"/>
-                                </Button>
-                                <Button x:Name="BtnCart"
+                                            <Image Source="/Res/Image/edit.png"/>
+                                        </Button>
+                                        <Button x:Name="BtnCart"
                                     Width="40"
                                     Height="40"
                                     HorizontalAlignment="Right"
@@ -82,16 +140,18 @@
                                     Background="{x:Null}"
                                     BorderThickness="0"
                                     Click="BtnCart_Click">
-                                    <Image Source="/Res/Image/Cart.png"/>
-                                </Button>
+                                            <Image Source="/Res/Image/Cart.png"/>
+                                        </Button>
+                                    </WrapPanel>
+                                </Grid>
+                                
                             </WrapPanel>
-                        </StackPanel>
 
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button x:Name="BtnAddService"
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="BtnAddService"
                 Grid.Row="3"
                 Width="44"
                 Height="40"
@@ -100,9 +160,9 @@
                 HorizontalAlignment="Right"
                 Margin="0 0 70 0"
                 Click="BtnAddService_Click">
-            <Image Source="/Res/Image/Add.png"/>
-        </Button>
-        <Button x:Name="BtExit"
+                <Image Source="/Res/Image/Add.png"/>
+            </Button>
+            <Button x:Name="BtExit"
                 Grid.Row="3"
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
@@ -112,9 +172,9 @@
                 Height="44"
                 Width="40"
                 Click="BtExit_Click">
-            <Image Source="/Res/Image/Exit.png"/>
-        </Button>
-        <Button x:Name="BtnGoToCart"
+                <Image Source="/Res/Image/Exit.png"/>
+            </Button>
+            <Button x:Name="BtnGoToCart"
                     Width="40"
                     Height="40"
                     HorizontalAlignment="Right"
@@ -123,7 +183,8 @@
                     BorderThickness="0"
                     Click="BtnGoToCart_Click"
                 Grid.Row="1">
-            <Image Source="/Res/Image/Cart.png"/>
-        </Button>
-    </Grid>
+                <Image Source="/Res/Image/Cart.png"/>
+            </Button>
+        </Grid>
+    </Border>
 </Window>

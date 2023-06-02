@@ -38,6 +38,7 @@ namespace Kingsman_2ISP11_20.Windows
             CmbTypeService.DisplayMemberPath = "Title";
 
             ImgImageService.Source = new BitmapImage(new Uri(service.Image));
+            
 
             TbNameService.Text = service.Title;
             TbDiscService.Text = service.Discription;
@@ -58,5 +59,21 @@ namespace Kingsman_2ISP11_20.Windows
 
             this.Close();
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
     }
 }

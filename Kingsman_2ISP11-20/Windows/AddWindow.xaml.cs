@@ -59,5 +59,21 @@ namespace Kingsman_2ISP11_20.Windows
                 pathImage = openFileDialog.FileName;
             }
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+        
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }

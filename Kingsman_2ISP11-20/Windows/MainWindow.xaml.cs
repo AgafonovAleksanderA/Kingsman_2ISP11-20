@@ -33,12 +33,30 @@ namespace Kingsman_2ISP11_20.Windows
 
         private void BtnEmployees_Click(object sender, RoutedEventArgs e)
         {
-
+            EmploeeListWindow emploeeListWindow = new EmploeeListWindow();
+            emploeeListWindow.Show();
+            this.Close();
         }
 
         private void BtnClient_Click(object sender, RoutedEventArgs e)
         {
+            ClientListWindow clientListWindow = new ClientListWindow();
+            clientListWindow.Show();
+            this.Close();
+        }
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
 
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }
