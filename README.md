@@ -13,29 +13,29 @@
 
 <b> Авторизация </b>
 
-![image](https://user-images.githubusercontent.com/131613999/235536551-43732d7a-c0fb-4a32-a92c-6fb13fa742ea.png)
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/8963e925-d772-4528-92b2-8bbc0df225c0)
 
 <b> Главное окно </b>
 
-![image](https://user-images.githubusercontent.com/131613999/235536619-5a8b5852-bf2f-466d-a220-e2acd4aa89ba.png)
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/b7ea0b60-0e17-43b0-9f45-a794d9b442d0)
 
 <b> Меню сервиса </b>
 
-![image](https://user-images.githubusercontent.com/131613999/235536668-785234ef-3b91-4d34-a0a3-ddf59c0c25be.png)
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/01faee43-c20a-41db-b034-900b17cd8b28)
 
 <b> Окно регистрации </b>
 
-![image](https://user-images.githubusercontent.com/131613999/235536810-8f87c133-fbab-49d0-a265-dd18d87ef54b.png)
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/a03eee8d-1f45-4303-b926-13571565f3ca)
 
 <b> Добавление услуги </b>
 
-![image](https://user-images.githubusercontent.com/131613999/235537180-451684bb-357e-4ff6-a9fc-fbd618ba6c55.png)
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/0e51a11e-e972-43b7-8db3-6e677496400b)
 
 ![image](https://user-images.githubusercontent.com/131613999/235537212-4fd016ba-b104-4ecb-8f57-7b558bc2a677.png)
 
 <b> Добавление в корзину </b>
 
-![image](https://user-images.githubusercontent.com/131613999/235538393-45f0a4a4-bfd6-446d-9dfe-7fe62ea9c803.png)
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/cbbb11fc-cb9b-4f0d-9cca-671d1cdf7f8e)
 
 ![image](https://user-images.githubusercontent.com/131613999/235538413-a95816b1-4d77-42b7-b68f-1558919af11d.png)
 
@@ -43,4 +43,5 @@
 
 ![image](https://user-images.githubusercontent.com/131613999/235538608-8d56cc76-a726-4003-89b8-08d799f732f0.png)
 
-
+<b> Список клиентов </b>
+![image](https://github.com/AgafonovAleksanderA/Kingsman_2ISP11-20/assets/131613999/feb5ef7f-49ae-432f-ae8e-35705d547b19)
